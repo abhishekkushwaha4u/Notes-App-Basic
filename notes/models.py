@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class CustomUser(models.Model):
     userId = models.AutoField(primary_key=True)
     username = models.CharField(max_length=50)
@@ -7,6 +8,7 @@ class CustomUser(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Note(models.Model):
+    id = models.AutoField(primary_key=True)
     note = models.TextField()
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
