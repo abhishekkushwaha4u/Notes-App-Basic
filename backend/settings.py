@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "encrypted_fields",
     'rest_framework',
     'notes',
 ]
@@ -75,31 +74,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'notes_app',
+        'USER': 'djangouser',
+        'PASSWORD': config('DB_PASS'),
+        'HOST': 'localhost'
     }
 }
 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'notes',
-#         'USER': 'abhi4u',
-#         'PASSWORD': config("DB_PASS"),
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-
-FIELD_ENCRYPTION_KEYS = [
-    "f164ec6bd6fbc4aef5647abc15199da0f9badcc1d2127bde2087ae0d794a9a0b"
-]
 
 
 REST_FRAMEWORK = {
@@ -108,15 +93,6 @@ REST_FRAMEWORK = {
 }
 
 APPEND_SLASH = False
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'OPTIONS': {
-#             'read_default_file': '/etc/mysql/my.cnf',
-#         },
-#     }
-# }
 
 
 # Password validation

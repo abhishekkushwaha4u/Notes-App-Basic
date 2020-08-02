@@ -1,4 +1,5 @@
 from django.db import models
+from fernet_fields import EncryptedTextField
 
 
 class CustomUser(models.Model):
@@ -9,6 +10,6 @@ class CustomUser(models.Model):
 
 class Note(models.Model):
     id = models.AutoField(primary_key=True)
-    note = models.TextField()
+    note = EncryptedTextField()
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
