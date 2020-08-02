@@ -50,7 +50,7 @@ class UserLoginView(APIView):
         if check_password(user_check.password, password):
             return Response({ 'status': 'success', 'userId': user_check.userId }, status=status.HTTP_200_OK)
         else:
-            return Response({ 'error': 'Password incorrect' }, status=status.HTTP_403_FORBIDDEN)
+            return Response({ 'error': 'Password incorrect' }, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class AddNoteView(APIView):
