@@ -3,7 +3,7 @@ cffi==1.14.1
 cryptography==3.0
 Django==3.0.8
 django-fernet-fields==0.6
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 mysqlclient==2.0.1
 pycparser==2.20
 python-decouple==3.3
